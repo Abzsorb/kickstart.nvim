@@ -23,6 +23,8 @@ return {
 
       require('mini.pairs').setup()
 
+      require('mini.icons').setup()
+
       require('mini.files').setup {
         windows = {
           preview = true,
