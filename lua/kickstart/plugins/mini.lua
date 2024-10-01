@@ -30,6 +30,9 @@ return {
       statusline.section_location = function()
         return '%2l:%-2v'
       end
+
+      -- Keybindings:
+      vim.keymap.set('n', '-', '<CMD>lua MiniFiles.open(MiniFiles.get_latest_path())<CR>', { desc = 'Open parent directory' })
     end,
   },
 }
