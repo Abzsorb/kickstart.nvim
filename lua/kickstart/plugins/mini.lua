@@ -17,6 +17,19 @@ return {
       -- - sr)'  - [S]urround [R]eplace [)] [']
       require('mini.surround').setup()
 
+      require('mini.jump').setup()
+
+      require('mini.align').setup()
+
+      require('mini.pairs').setup()
+
+      require('mini.files').setup {
+        windows = {
+          preview = true,
+          width_preview = 50,
+        },
+      }
+
       -- Simple and easy statusline.
       --  You could remove this setup call if you don't like it,
       --  and try some other statusline plugin
@@ -32,8 +45,8 @@ return {
         return '%2l:%-2v'
       end
 
-      -- ... and there is more!
-      --  Check out: https://github.com/echasnovski/mini.nvim
+      -- Keybindings:
+      vim.keymap.set('n', '-', '<CMD>lua MiniFiles.open(MiniFiles.get_latest_path())<CR>', { desc = 'Open parent directory' })
     end,
   },
 }
